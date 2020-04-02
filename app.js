@@ -116,8 +116,6 @@
       .when('/', {
         templateUrl: 'home.html',
         controller: 'HomePageController'
-        // templateUrl: 'pages/our-team.html',
-        // controller: 'OutTeamController'
       })
       .when('/terms-of-use', {
         templateUrl: 'pages/terms-of-use.html'

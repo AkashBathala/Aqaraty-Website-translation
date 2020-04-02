@@ -14,6 +14,7 @@
 	"Sign up": "الاشتراك",
 	"Free": "مجانا",
 	"Email:": "البريد الإلكتروني:",
+	"Email": "البريد الإلكتروني",
 	"Give a world class customer experience": "امنح تجربة عملاء عالمية المستوى",
 	"Unlock the benefits of connecting your team, customers and real estate through the same platform.": "فتح فوائد ربط فريقك والعملاء والعقارات من خلال نفس المنصة.",
 	"Start a Free Trial": "بدء تجربة مجانية",
@@ -258,5 +259,16 @@
 	"Success": "نجاح",
 	"Your form has been submitted. We will get back to you.": "وقد قدم النموذج الخاص بك. سوف نعود اليك.",
 	"Error": "خطأ",
-	"Something went wrong. Please try again": "هناك خطأ ما. حاول مرة اخرى"
+	"Something went wrong. Please try again": "هناك خطأ ما. حاول مرة اخرى",
+	"Worth of real estate assets": "قيمة الأصول العقارية",
+	"managed through Aqaraty": "تدار من خلال عقاراتي",
+	"Payments processed every year": "معالجة المدفوعات كل عام",
+	"$10M": "10 ملايين دولار",
+	"$100M": "100 مليون دولار",
+	"10,000+": "10,000+",
+	"Rental properties managed through Aqaraty": "تدار العقارات المؤجرة من خلال عقاراتي",
+	"New buildings onboarded with us every month": "على متن المباني الجديدة كل شهر",
+	"8+ countries": "8+ دول",
+	"$100k+": "100 ألف دولار +",
+	"How can we help?": "كيف يمكن أن نساعد؟"
 }
