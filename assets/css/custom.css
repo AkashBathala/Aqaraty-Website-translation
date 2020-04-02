@@ -507,3 +507,11 @@ in the LICENSE file at http://material.angularjs.org/HEAD/license.
   height: 15px !important;
   width: 15px !important;
 }
+
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px !important;
+}
