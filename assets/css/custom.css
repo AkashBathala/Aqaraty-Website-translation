@@ -515,3 +515,7 @@ in the LICENSE file at http://material.angularjs.org/HEAD/license.
 .margin-bottom-10 {
   margin-bottom: 10px !important;
 }
+
+.text-right {
+  text-align: right !important;
+}
