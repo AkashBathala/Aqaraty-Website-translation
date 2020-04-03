@@ -49,66 +49,67 @@
     .controller('VisionController', VisionController)
     .controller('OutTeamController', OutTeamController)
     .controller('ModalController', ModalController)
-    .component('bottomFooter', {
-      bindings: {},
-      templateUrl: 'pages/footer.html',
-      controller: 'FooterController'
-    })
-    .directive('changeClassOnScroll', function ($window) {
-      return {
-        restrict: 'A',
-        scope: {
-          offset: "@",
-          scrollClass: "@"
-        },
-        link: function (scope, element) {
-          angular.element($window).bind("scroll", function () {
-            if (this.pageYOffset >= parseInt(scope.offset)) {
-              element.addClass(scope.scrollClass);
-            } else {
-              element.removeClass(scope.scrollClass);
-            }
-          });
-        }
-      };
-    })
-    .directive(
-      "mAppLoading",
-      function ($animate) {
-        // Return the directive configuration.
-        return ({
-          link: link,
-          restrict: "C"
-        });
-        // I bind the JavaScript events to the scope.
-        function link(scope, element, attributes) {
-          // Due to the way AngularJS prevents animation during the bootstrap
-          // of the application, we can't animate the top-level container; but,
-          // since we added "ngAnimateChildren", we can animated the inner
-          // container during this phase.
-          // --
-          // NOTE: Am using .eq(1) so that we don't animate the Style block.
-          $animate.leave(element.children().eq(1)).then(
-            function cleanupAfterAnimation() {
-              // Remove the root directive element.
-              element.remove();
-              // Clear the closed-over variable references.
-              scope = element = attributes = null;
-            }
-          );
-        }
+    .controller('TermsOfUseController', TermsOfUseController)
+      .component('bottomFooter', {
+        bindings: {},
+        templateUrl: 'pages/footer.html',
+        controller: 'FooterController'
       })
-    .directive('keepWidth', function () {
-      return {
-        restrict: 'A',
-        link: function (scope, element, attrs, controller) {
-          var width = element.prop('offsetWidth');
-          var otherCss = element.css('cssText');
+      .directive('changeClassOnScroll', function ($window) {
+        return {
+          restrict: 'A',
+          scope: {
+            offset: "@",
+            scrollClass: "@"
+          },
+          link: function (scope, element) {
+            angular.element($window).bind("scroll", function () {
+              if (this.pageYOffset >= parseInt(scope.offset)) {
+                element.addClass(scope.scrollClass);
+              } else {
+                element.removeClass(scope.scrollClass);
+              }
+            });
+          }
+        };
+      })
+      .directive(
+        "mAppLoading",
+        function ($animate) {
+          // Return the directive configuration.
+          return ({
+            link: link,
+            restrict: "C"
+          });
+          // I bind the JavaScript events to the scope.
+          function link(scope, element, attributes) {
+            // Due to the way AngularJS prevents animation during the bootstrap
+            // of the application, we can't animate the top-level container; but,
+            // since we added "ngAnimateChildren", we can animated the inner
+            // container during this phase.
+            // --
+            // NOTE: Am using .eq(1) so that we don't animate the Style block.
+            $animate.leave(element.children().eq(1)).then(
+              function cleanupAfterAnimation() {
+                // Remove the root directive element.
+                element.remove();
+                // Clear the closed-over variable references.
+                scope = element = attributes = null;
+              }
+            );
+          }
+        })
+      .directive('keepWidth', function () {
+        return {
+          restrict: 'A',
+          link: function (scope, element, attrs, controller) {
+            var width = element.prop('offsetWidth');
+            var otherCss = element.css('cssText');
 
-          attrs.$set('style', 'width: ' + width + 'px;' + otherCss);
+            attrs.$set('style', 'width: ' + width + 'px;' + otherCss);
+          }
         }
-      }
-    });
+      });
 
   function RouteConfig($routeProvider, $locationProvider) {
     'use strict';
@@ -118,7 +119,8 @@
         controller: 'HomePageController'
       })
       .when('/terms-of-use', {
-        templateUrl: 'pages/terms-of-use.html'
+        templateUrl: 'pages/terms-of-use.html',
+        controller: "TermsOfUseController"
       })
       .when('/privacy-policy', {
         templateUrl: 'pages/privacy-policy.html'
@@ -179,7 +181,7 @@
 
   }
 
-  function CoreController($scope, $http, $document, $window, $location, toaster,$filter) {
+  function CoreController($scope, $http, $document, $window, $location, toaster, $filter) {
     $scope.progressBarLoading = false;
     $scope.callbackForm = {};
     $scope.onCallbackSubmitHandler = function (form) {
@@ -304,7 +306,7 @@
     //   });
     // }
 
-    
+
     $scope.showSuccessToast = function () {
       toaster.pop('success', $filter('translate')("Success"), $filter('translate')("Your form has been submitted. We will get back to you."));
     }
@@ -1006,6 +1008,10 @@
   }
 
   function VisionController($scope, translateService) {
+    $scope.translateService = translateService
+  }
+
+  function TermsOfUseController($scope, translateService) {
     $scope.translateService = translateService
   }
 

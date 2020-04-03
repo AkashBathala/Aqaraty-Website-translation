@@ -1,14 +1,14 @@
-<section class="fdb-block">
+<section class="fdb-block" ng-controller="TermsOfUseController">
   <div class="container">
     <div class="row" id="terms-top">
-      <div class="col text-left">
+      <div class="col text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
         <h2>{{"Terms of use"|translate}}</h2>
         <br>
         <br>
         <h3 class="font-weight-bold thm-scroll-heading">{{"1. Acceptance of Terms"|translate}}</h3>
 
         <p>
-          {{"The services that TheHouseMonk provides to user are subject to the following TOU. TheHouseMonk reserves the right to update the TOU at any time without notice to User."|translate}}
+          {{"The services that Aqaraty provides to user are subject to the following TOU. Aqaraty reserves the right to update the TOU at any time without notice to User."|translate}}
         </p>
         <p>
           <strong>1.1 -</strong>
@@ -65,7 +65,7 @@
         </p>
 
         <div class="page-header term">
-          <h3 class="font-weight-bold thm-scroll-heading">7. Disclaimer of Warranty; Limitation of Liability</h3>
+          <h3 class="font-weight-bold thm-scroll-heading">{{"7. Disclaimer of Warranty; Limitation of Liability"|translate}}</h3>
         </div>
         <p>
           <strong>7.1 - </strong> {{"User expressly agrees that use of the Website is at User’s Sole risk. Neither Aqaraty, its affiliates nor any of their respective employees, agents, third party content providers or licensors warrant that the Website will be uninterrupted or error free; Nor do they make any warranty as to the results that may be obtained from the use of the website, or, as to the accuracy, reliability or content of any information, service, or merchandise provided through the website."|translate}}
