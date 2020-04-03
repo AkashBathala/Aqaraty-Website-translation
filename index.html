@@ -60,7 +60,7 @@
     <div class="container">
       <nav class="navbar fixed-top navbar-light navbar-expand-xl white-background " change-class-on-scroll offset="50"
         scroll-class="raised">
-        <div class="col-md-0 col-lg-0 col-xl-1 d-none d-md-none d-lg-block d-xl-block col-md-0 col-sm-0"></div>
+        <!-- <div class="col-md-0 col-lg-0 col-xl-1 d-none d-md-none d-lg-block d-xl-block col-md-0 col-sm-0"></div> -->
         <div class="col-0 d-none d-md-none d-lg-block d-xl-block text-left">
           <a class="navbar-brand" href="/Aqaraty-Website-translation/">
             <img src="assets/images/aqaraty-logo.jpg" height="40" alt="image">
@@ -71,13 +71,15 @@
             <img src="assets/images/aqaraty-logo.jpg" height="40" style="width:100px;" alt="image">
           </a>
         </div>
-        <div class="col-0 col-md-1 col-lg-1 padding-0 margin-top-10 margin-bottom-10 navbar-toggler offset-md-8 topnav-right" style="max-width: fit-content;border: none;" data-toggle="collapse">
+        <div
+          class="col-0 col-md-1 col-lg-1 padding-0 margin-top-10 margin-bottom-10 navbar-toggler offset-md-8 topnav-right"
+          style="max-width: fit-content;border: none;" data-toggle="collapse">
           <md-input-container class="margin-0">
             <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
-            data-md-container-class="selectdemoSelectHeader">
-            <md-optgroup label="languages">
-              <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
-                {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15" > </md-option>
+              data-md-container-class="selectdemoSelectHeader">
+              <md-optgroup label="languages">
+                <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
+                  {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15"> </md-option>
               </md-optgroup>
             </md-select>
           </md-input-container>
@@ -87,9 +89,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-      </button>
+        </button>
 
-        <div class="collapse navbar-collapse justify-content-center offset-md-4 offset-lg-0 col-lg-7 col-md-7 navbar-collapse-1 margin-left-0"
+        <div
+          class="collapse navbar-collapse justify-content-center offset-md-4 offset-lg-0 col-lg-9 col-md-9 navbar-collapse-1 margin-left-0"
           id="navbarNav3">
           <ul class="navbar-nav justify-content-center col-12">
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -102,8 +105,10 @@
                 <span ng-class="{'nav-thm-active': isAboutActive()}">{{"About Us"|translate}}</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" href="vision">{{"Vision"|translate}}</a>
-                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" href="our-team">{{"Our Team"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="vision">{{"Vision"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="our-team">{{"Our Team"|translate}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -112,20 +117,21 @@
                 <span ng-class="{'nav-thm-active': isCustomerActive()}">{{"Solutions"|translate}}</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show" href="rental-management">{{"Rental Management"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="rental-management">{{"Rental Management"|translate}}</a>
               </div>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link" href="pricing"><span
-                   ng-class="{'nav-thm-active': isActive('/pricing')}">{{"Pricing"|translate}}</span></a>
+                  ng-class="{'nav-thm-active': isActive('/pricing')}">{{"Pricing"|translate}}</span></a>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link" href="partners"><span
-                   ng-class="{'nav-thm-active': isActive('/partners')}">{{"Partners"|translate}}</span></a>
+                  ng-class="{'nav-thm-active': isActive('/partners')}">{{"Partners"|translate}}</span></a>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
               <a class="nav-link" href="contact-us"><span
-                   ng-class="{'nav-thm-active': isActive('/contact-us')}">{{"Contact us"|translate}}</span></a>
+                  ng-class="{'nav-thm-active': isActive('/contact-us')}">{{"Contact us"|translate}}</span></a>
             </li>
 
             <li class="nav-item " data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -145,7 +151,7 @@
                 <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
               </div> -->
             </li>
-              <!-- <li class="nav-item d-sm-block  d-xl-none d-xl-none" style="margin-right: 28px">
+            <!-- <li class="nav-item d-sm-block  d-xl-none d-xl-none" style="margin-right: 28px">
             <div class="col-0 col-md-1 col-lg-1 padding-0 margin-top-10 margin-bottom-10">
               <md-input-container class="margin-0">
                 <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
@@ -175,8 +181,8 @@
                   <a class="dropdown-item" href="#" ng-click="routeToRenatlLoginPage()">Rental management</a>
                 </div> -->
           </li>
-          <li class="nav-item" style="margin-right: 28px">
-            <div class="col-0 col-md-1 col-lg-1 " style="    z-index: 1030;            ">
+          <li class="nav-item">
+            <div class="col-0 col-md-1 col-lg-1 " style="z-index: 1030;">
               <md-input-container class="margin-0">
                 <md-select ng-model="selectLanguage" md-on-close="clearSearchTerm()"
                   data-md-container-class="selectdemoSelectHeader">
@@ -185,7 +191,7 @@
                   </md-select-header> -->
                   <md-optgroup label="languages">
                     <md-option ng-value="lang.language" ng-repeat="lang in languages" ng-click="ChangeLanguage(lang)">
-                      {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15" > </md-option>
+                      {{lang.name}} <img src="{{lang.imagePath}}" class="image-square-15"> </md-option>
                   </md-optgroup>
                 </md-select>
               </md-input-container>
@@ -198,7 +204,7 @@
               <a class="btn btn-primary ml-md-3 btn-sm" href="/choose-product">{{"Sign Up"|translate}} <sup>Free</sup></a>
             </li> -->
         </ul>
-       
+
       </nav>
     </div>
   </header>
@@ -291,8 +297,10 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/7.0.0/rzslider.min.js"></script>
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.9/angular-locale_ar.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.2/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
