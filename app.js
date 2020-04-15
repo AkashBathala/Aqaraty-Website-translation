@@ -215,7 +215,7 @@
         // s.parentNode.insertBefore(ct, s);
 
         $scope.callbackModalForm = {
-          countryCode: '+91'
+          countryCode: '+965'
         }
         form.$setPristine();
         form.$setUntouched();
