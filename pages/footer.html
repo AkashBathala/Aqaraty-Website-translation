@@ -11,8 +11,9 @@
         </p>
         <p class="thm-content-body direction-ltr {{translateService.getCurrentLanguage()=='ar'?'text-align-end':'text-align-start'}}">
           <a href="tel:+965 9400 1422">
-            <img src="./assets/imgs/footer-icons-call.png" alt="phone" class="img-fluid" style="height: 30px;">
+            <img src="./assets/imgs/footer-icons-call.png" ng-if="translateService.getCurrentLanguage()!='ar'" alt="phone" class="img-fluid" style="height: 30px;">
             +965 9400 1422
+            <img src="./assets/imgs/footer-icons-call.png" ng-if="translateService.getCurrentLanguage()=='ar'" alt="phone" class="img-fluid" style="height: 30px;">
           </a>
         </p>
         <p class="thm-content-body">
