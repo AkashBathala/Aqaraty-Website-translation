@@ -519,3 +519,12 @@ in the LICENSE file at http://material.angularjs.org/HEAD/license.
 .text-right {
   text-align: right !important;
 }
+
+.center-content {
+  justify-content: center !important;
+  display: flex !important;
+}
+
+.text-align-end {
+  text-align: end !important;
+}

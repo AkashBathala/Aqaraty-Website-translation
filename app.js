@@ -115,8 +115,10 @@
     'use strict';
     $routeProvider
       .when('/', {
-        templateUrl: 'home.html',
-        controller: 'HomePageController'
+        // templateUrl: 'home.html',
+        // controller: 'HomePageController'
+        templateUrl: 'pages/vision.html',
+        controller: 'VisionController'
       })
       .when('/terms-of-use', {
         templateUrl: 'pages/terms-of-use.html',

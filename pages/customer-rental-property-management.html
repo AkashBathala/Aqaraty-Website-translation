@@ -174,8 +174,8 @@
                         <h2>{{"Explore Our Solutions"|translate}}</h2>
                     </div>
                 </div>
-                <div class="offset-md-3 col-md-7 center">
-                    <p class="mt-4">
+                <div class=" col-md-12 center-content text-center">
+                    <p class="mt-4 w-50">
                         <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
                             href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
                         <a style="color: gray !important"
@@ -183,6 +183,15 @@
                             data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
                     </p>
                 </div>
+                <!-- <div class="offset-md-3 col-md-7 center">
+                    <p class="mt-4">
+                        <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
+                            href="choose-product">{{"START A FREE TRIAL"|translate}}</a> 
+                        <a style="color: gray !important"
+                            class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
+                            data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
+                    </p>
+                </div> -->
             </div>
         </section>
         <!-- <section class="fdb-block bg-dark pt-50 pb-50 primary-background" id="rent-a-home">
@@ -283,7 +292,7 @@
                                                 <label>{{"Country Code:"|translate}} </label>
                                                 <select name="countryCode" ng-model="callbackModalForm.countryCode"
                                                     ng-init="callbackModalForm.countryCode = '+965'"
-                                                    class="form-control">
+                                                    class="form-control direction-ltr">
                                                     <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">
                                                         {{cityObj.code}}</option>
                                                 </select>

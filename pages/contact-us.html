@@ -37,7 +37,7 @@
               <div class="col">
                 <label>{{"Country Code:"|translate}} </label>
                 <select name="countryCode" ng-model="contactUsForm.countryCode"
-                  ng-init="contactUsForm.countryCode = '+965'" class="form-control">
+                  ng-init="contactUsForm.countryCode = '+965'" class="form-control direction-ltr">
                   <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                 </select>
               </div>

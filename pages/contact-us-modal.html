@@ -33,7 +33,7 @@
                 class="d-none d-sm-block text-align-start {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}} ">{{"Country Code:"|translate}}</label>
               <label class="d-block d-sm-none">{{"Co. Code"|translate}}</label>
               <select name="countryCode" ng-model="callbackModalForm.countryCode"
-                ng-init="callbackModalForm.countryCode = '+965'" class="form-control">
+                ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr">
                 <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
               </select>
             </div>
