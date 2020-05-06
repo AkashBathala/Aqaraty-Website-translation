@@ -92,7 +92,7 @@
         </button>
 
         <div
-          class="collapse navbar-collapse justify-content-center offset-md-4 offset-lg-0 col-lg-8 col-md-8 navbar-collapse-1 margin-left-0"
+          class="collapse navbar-collapse justify-content-center offset-md-4 offset-lg-0 col-lg-8 col-md-8 navbar-collapse-1 margin-left-0 {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}"
           id="navbarNav3">
           <ul class="navbar-nav justify-content-center col-12">
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -104,7 +104,7 @@
                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span ng-class="{'nav-thm-active': isAboutActive()}">{{"About Us"|translate}}</span>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu text-align-start" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
                   href="vision">{{"Vision"|translate}}</a>
                 <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
@@ -116,9 +116,15 @@
                 id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span ng-class="{'nav-thm-active': isCustomerActive()}">{{"Solutions"|translate}}</span>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu text-align-start" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
-                  href="rental-management">{{"Rental Management"|translate}}</a>
+                  href="customer-builder">{{"Real Estate Developers"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="rental-management">{{"Rental & Property Management"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="customer-owner-association">{{"Home Owner Associations"|translate}}</a>
+                <a class="dropdown-item" data-toggle="collapse" data-target=".navbar-collapse.show"
+                  href="customer-facility-management">{{"Facility Management"|translate}}</a>
               </div>
             </li>
             <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
@@ -850,7 +856,7 @@
             </div>
           </div>
         </section> -->
-        <section class="fdb-block mt-4" style="background-color: #E4003A; padding: 0px;color:#F5F0E0">
+        <section class="fdb-block mt-4 {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}" style="background-color: #E4003A; padding: 0px;color:#F5F0E0">
           <div class="container pt-50 pb-50">
             <div class="row">
               <div class="col-lg-12 text-center">
@@ -864,7 +870,7 @@
           </div>
         </section>
         
-        <section  class="fdb-block">
+        <section  class="fdb-block {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}">
           <div class="container">
               <div class="row text-center">
                 <div class="col-12">

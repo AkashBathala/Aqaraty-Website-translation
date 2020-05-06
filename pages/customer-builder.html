@@ -31,7 +31,7 @@
             </div>
         </section>
 
-        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
+        <!-- <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-5 col-md">
@@ -55,8 +55,34 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
+        <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}" id="stats">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-sm-5 col-md">
+                  <h3><strong>{{"500 Thousand + sqmt"|translate}}</strong></h3>
+                  <p>{{"Managed via Aqaraty solutions"|translate}}</p>
+                </div>
+                <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0 ">
+                  <h3><strong>{{"300+ users"|translate}}</strong></h3>
+                  <p>{{"Use our solutions daily"|translate}}</p>
+                </div>
+        
+                <div class="offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+                  <h3><strong>{{"10+ cities"|translate}}</strong></h3>
+                  <p>{{"Where Aqaraty has been deployed"|translate}}</p>
+                </div>
+        
+                <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+                  <h3><strong>{{"100+ service providers"|translate}}</strong></h3>
+                  <p>{{"Work with us"|translate}}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          
         <section class="fdb-block" id="explore">
             <div class="container">
                 <div class="row align-items-center">
@@ -217,7 +243,7 @@
 
         </section> -->
 
-        <section class="fdb-block">
+        <section class="fdb-block {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
             <div class="container">
                 <div class="row text-center">
                     <div class="col-12">

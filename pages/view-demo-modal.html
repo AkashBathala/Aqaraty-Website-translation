@@ -28,9 +28,9 @@
                                 {{'name is required'|translate}}</p>
                         </div>
                     </div>
-                    <div class="row mt-4">
-                        <div class="col-4 col-md-4 text-align-start">
-                            <label class="d-none d-sm-block">{{"Country Code:"|translate}}</label>
+                    <div class="row mt-4 direction-ltr">
+                        <div class="col-4 col-md-4 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
+                            <label class="d-none d-sm-block text-align-start">{{"Country Code:"|translate}}</label>
                             <label class="d-block d-sm-none">{{"Co. Code"|translate}}</label>
                             <select name="countryCode" ng-model="demoSignupForm.countryCode"
                                 ng-init="demoSignupForm.countryCode = '+965'" class="form-control">
@@ -38,7 +38,7 @@
                                 </option>
                             </select>
                         </div>
-                        <div class="col-8 col-md-8 text-align-start">
+                        <div class="col-8 col-md-8 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
                             <label>{{"Phone Number:"|translate}}</label>
                             <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
                                 class="form-control" placeholder="{{'Enter your phone number'|translate}}"

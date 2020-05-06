@@ -21,7 +21,7 @@
       $translateProvider.useSanitizeValueStrategy(null);
 
       // $translateProvider.preferredLanguage('en');
-      $translateProvider.use('ar')
+      $translateProvider.use('en')
 
       // document.documentElement.style.setProperty('--dir', $translateProvider.use() == 'ar' ? 'rtl' : 'ltr')
 
@@ -50,66 +50,67 @@
     .controller('OutTeamController', OutTeamController)
     .controller('ModalController', ModalController)
     .controller('TermsOfUseController', TermsOfUseController)
-      .component('bottomFooter', {
-        bindings: {},
-        templateUrl: 'pages/footer.html',
-        controller: 'FooterController'
-      })
-      .directive('changeClassOnScroll', function ($window) {
-        return {
-          restrict: 'A',
-          scope: {
-            offset: "@",
-            scrollClass: "@"
-          },
-          link: function (scope, element) {
-            angular.element($window).bind("scroll", function () {
-              if (this.pageYOffset >= parseInt(scope.offset)) {
-                element.addClass(scope.scrollClass);
-              } else {
-                element.removeClass(scope.scrollClass);
-              }
-            });
-          }
-        };
-      })
-      .directive(
-        "mAppLoading",
-        function ($animate) {
-          // Return the directive configuration.
-          return ({
-            link: link,
-            restrict: "C"
+    .controller('ContactUsModalController', ContactUsModalController)
+    .component('bottomFooter', {
+      bindings: {},
+      templateUrl: 'pages/footer.html',
+      controller: 'FooterController'
+    })
+    .directive('changeClassOnScroll', function ($window) {
+      return {
+        restrict: 'A',
+        scope: {
+          offset: "@",
+          scrollClass: "@"
+        },
+        link: function (scope, element) {
+          angular.element($window).bind("scroll", function () {
+            if (this.pageYOffset >= parseInt(scope.offset)) {
+              element.addClass(scope.scrollClass);
+            } else {
+              element.removeClass(scope.scrollClass);
+            }
           });
-          // I bind the JavaScript events to the scope.
-          function link(scope, element, attributes) {
-            // Due to the way AngularJS prevents animation during the bootstrap
-            // of the application, we can't animate the top-level container; but,
-            // since we added "ngAnimateChildren", we can animated the inner
-            // container during this phase.
-            // --
-            // NOTE: Am using .eq(1) so that we don't animate the Style block.
-            $animate.leave(element.children().eq(1)).then(
-              function cleanupAfterAnimation() {
-                // Remove the root directive element.
-                element.remove();
-                // Clear the closed-over variable references.
-                scope = element = attributes = null;
-              }
-            );
-          }
-        })
-      .directive('keepWidth', function () {
-        return {
-          restrict: 'A',
-          link: function (scope, element, attrs, controller) {
-            var width = element.prop('offsetWidth');
-            var otherCss = element.css('cssText');
-
-            attrs.$set('style', 'width: ' + width + 'px;' + otherCss);
-          }
         }
-      });
+      };
+    })
+    .directive(
+      "mAppLoading",
+      function ($animate) {
+        // Return the directive configuration.
+        return ({
+          link: link,
+          restrict: "C"
+        });
+        // I bind the JavaScript events to the scope.
+        function link(scope, element, attributes) {
+          // Due to the way AngularJS prevents animation during the bootstrap
+          // of the application, we can't animate the top-level container; but,
+          // since we added "ngAnimateChildren", we can animated the inner
+          // container during this phase.
+          // --
+          // NOTE: Am using .eq(1) so that we don't animate the Style block.
+          $animate.leave(element.children().eq(1)).then(
+            function cleanupAfterAnimation() {
+              // Remove the root directive element.
+              element.remove();
+              // Clear the closed-over variable references.
+              scope = element = attributes = null;
+            }
+          );
+        }
+      })
+    .directive('keepWidth', function () {
+      return {
+        restrict: 'A',
+        link: function (scope, element, attrs, controller) {
+          var width = element.prop('offsetWidth');
+          var otherCss = element.css('cssText');
+
+          attrs.$set('style', 'width: ' + width + 'px;' + otherCss);
+        }
+      }
+    });
 
   function RouteConfig($routeProvider, $locationProvider) {
     'use strict';
@@ -737,11 +738,16 @@
     };
 
   }
-  function PricingPageController($scope, $controller, $window) {
+  function PricingPageController($scope, $controller, $window, translateService) {
 
     $controller('CoreController', {
       $scope: $scope
     });
+
+    $scope.translateService = translateService
+    console.log($scope.translateService.getCurrentLanguage());
+    
+  
 
 
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
@@ -839,7 +845,7 @@
         $scope.billedAt = (parseInt($scope.price) / parseInt(value)).toFixed(2);
       }
       else if ((value !== 0) && (value <= 2500)) {
-        $scope.actualPrice = Math.round(parseInt(value) * 0.75 * $scope.basePrice);
+        $scope.actualPrice = Math.round(parseInt(value) * 1 * $scope.basePrice);
         if ($scope.actualPrice > 200) {
           $scope.price = $scope.actualPrice;
           $scope.regionUnit = value;
@@ -1024,6 +1030,7 @@
     $scope.onDemoSignupSubmitHandler = function (form) {
       $scope.progressBarLoading = true;
       $scope.demoSignupOverlayActive = true;
+      $scope.currentLanguage = translateService.getCurrentLanguage();
       $http({
         method: 'POST',
         url: 'http://52.220.118.81:3020/shared-resource/webhook/demo-registration?organization=5e1ad3b4d0ffee5fb4fc0410',
@@ -1067,6 +1074,13 @@
 
       });
     }
+  }
+
+
+  function ContactUsModalController($scope, translateService) {
+    $scope.translateService = translateService
+    console.log(translateService.getCurrentLanguage());
+    
   }
 
 })();

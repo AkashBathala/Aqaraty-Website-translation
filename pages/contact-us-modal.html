@@ -1,10 +1,10 @@
-<div class="modal fade" id="callbackModal" mg-model tabindex="-1" role="dialog" aria-labelledby="callbackModalLabel"
-  aria-hidden="true">
+<div class="modal fade {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}" id="callbackModal" ng-controller="ModalController"
+  mg-model tabindex="-1" role="dialog" aria-labelledby="callbackModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="callbackModalLabel">{{"Get a call back"|translate}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close modal-close-button" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -18,8 +18,8 @@
 
         <form name="callbackForm" novalidate>
           <div class="row">
-            <div class="col text-align-start {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}}">
-              <label class="float-right">{{"Name:"|translate}}</label>
+            <div class="col text-align-start ">
+              <label class="">{{"Name:"|translate}}</label>
               <input type="text" name="name" ng-disabled="progressBarLoading" class="form-control"
                 placeholder="{{'Enter your name'|translate}}" ng-model="callbackModalForm.name" required>
               <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">
@@ -27,28 +27,28 @@
             </div>
           </div>
 
-          <div class="row mt-4">
-            <div class="col-4 col-md-4">
+          <div class="row mt-4 direction-ltr">
+            <div class="col-4 col-md-4 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
               <label
-                class="d-none d-sm-block text-align-start {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}} ">{{"Country Code:"|translate}}</label>
+                class="d-none d-sm-block text-align-start  ">{{"Country Code:"|translate}}</label>
               <label class="d-block d-sm-none">{{"Co. Code"|translate}}</label>
               <select name="countryCode" ng-model="callbackModalForm.countryCode"
                 ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr">
                 <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
               </select>
             </div>
-            <div class="col-8 col-md-8 {{currentLanguage=='ar'?'direction-rtl':'direction-ltr'}} text-align-start">
-              <label class="float-right"> {{"Phone Number:"|translate}}</label>
+            <div class="col-8 col-md-8  text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
+              <label class=""> {{"Phone Number:"|translate}}</label>
               <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
-                placeholder="{{'Enter your phone  number'|translate}}" ng-model="callbackModalForm.phoneNumber" ng-minlength="4"
-                required>
+                placeholder="{{'Enter your phone  number'|translate}}" ng-model="callbackModalForm.phoneNumber"
+                ng-minlength="4" required>
             </div>
             <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
               {{"phone number is required and must be length 4"|translate}}
             </p>
           </div>
 
-          <div class="row mt-4">
+          <div class="row mt-4 text-align-start">
             <div class="col">
               <label>{{"Email:"|translate}}</label>
               <input type="email" name="email" ng-disabled="progressBarLoading" class="form-control"
@@ -56,11 +56,11 @@
 
             </div>
           </div>
-          <div class="row mt-4">
+          <div class="row mt-4 text-align-start">
             <div class="col">
               <label>{{"Message:"|translate}} </label>
-              <textarea class="form-control" placeholder="{{'Leave your message here'|translate}}" ng-model="callbackModalForm.message"
-                rows="3"></textarea>
+              <textarea class="form-control" placeholder="{{'Leave your message here'|translate}}"
+                ng-model="callbackModalForm.message" rows="3"></textarea>
             </div>
           </div>
           <div class="modal-footer">
