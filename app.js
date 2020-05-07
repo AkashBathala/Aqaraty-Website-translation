@@ -190,7 +190,7 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://rentals.thehousemonk.com/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -215,7 +215,7 @@
         // var s = $document[0].getElementsByTagName('script')[0];
         // s.parentNode.insertBefore(ct, s);
 
-        $scope.callbackModalForm = {
+        $scope.callbackForm = {
           countryCode: '+965'
         }
         form.$setPristine();
@@ -233,13 +233,13 @@
 
     };
 
-    $scope.onCallbackModalSubmitHandler = function () {
+    $scope.onCallbackModalSubmitHandler = function (form) {
       $scope.callbackModalOverlayActive = true;
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
         // url: '/shared-resource/webhook/support/contact-us/send-email',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/capture-website-contact',
+        url: 'https://rentals.thehousemonk.com/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.callbackModalForm.name,
           'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
@@ -746,8 +746,8 @@
 
     $scope.translateService = translateService
     console.log($scope.translateService.getCurrentLanguage());
-    
-  
+
+
 
 
     $window.document.title = 'Real Estate Customer Experience Management Platform | Property Management Solutions';
@@ -875,7 +875,7 @@
 
   }
 
-  function ContactUsPageController($scope, $controller, $window, $filter, translateService) {
+  function ContactUsPageController($scope, $controller, $window, $filter, translateService, $http, $location) {
 
     $controller('CoreController', {
       $scope: $scope
@@ -890,22 +890,22 @@
       $scope.progressBarLoading = true;
       $http({
         method: 'POST',
-        url: '/shared-resource/webhook/support/contact-us/send-email',
+        url: 'https://rentals.thehousemonk.com/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
-          'name': $scope.callbackModalForm.name,
-          'phoneNumber': $scope.callbackModalForm.countryCode + $scope.callbackModalForm.phoneNumber,
+          'name': $scope.contactUsForm.name,
+          'phoneNumber': $scope.contactUsForm.countryCode + $scope.contactUsForm.phoneNumber,
           'page': $location.path(),
-          'email': $scope.callbackModalForm.email,
-          'message': $scope.callbackModalForm.message,
+          'email': $scope.contactUsForm.email,
+          'message': $scope.contactUsForm.message,
         }
       }).then(function (response) {
-        $scope.callbackModalForm = {};
+        $scope.contactUsForm = {};
         $scope.showSuccessToast();
       }, function (response) {
         $scope.showErrorToast();
       }).finally(function () {
-        $scope.callbackModalForm = {
-          product: $scope.callbackModalForm.product
+        $scope.contactUsForm = {
+          product: $scope.contactUsForm.product
         };
         $scope.progressBarLoading = false;
         $scope.callbackModalOverlayActive = false;
@@ -1025,7 +1025,7 @@
     $scope.translateService = translateService
   }
 
-  function ModalController($scope, translateService) {
+  function ModalController($scope, translateService, $http) {
     $scope.translateService = translateService
     $scope.onDemoSignupSubmitHandler = function (form) {
       $scope.progressBarLoading = true;
@@ -1033,7 +1033,7 @@
       $scope.currentLanguage = translateService.getCurrentLanguage();
       $http({
         method: 'POST',
-        url: 'http://52.220.118.81:3020/shared-resource/webhook/demo-registration?organization=5e1ad3b4d0ffee5fb4fc0410',
+        url: 'https://rentals.thehousemonk.com/shared-resource/webhook/demo-registration?organization=5e1ad3b4d0ffee5fb4fc0410',
         data: {
           'name': $scope.demoSignupForm.name,
           'phoneNumber': $scope.demoSignupForm.countryCode + $scope.demoSignupForm.phoneNumber,
@@ -1067,10 +1067,10 @@
           countryCode: '+91'
         };
         $scope.progressBarLoading = false;
-        setTimeout((() => {
-          window.location.href = 'api/demo-login?src=demopage';
-          $scope.demoSignupOverlayActive = false;
-        }), 1500);
+        // setTimeout((() => {
+        //   window.location.href = 'api/demo-login?src=demopage';
+        //   $scope.demoSignupOverlayActive = false;
+        // }), 1500);
 
       });
     }
@@ -1080,7 +1080,7 @@
   function ContactUsModalController($scope, translateService) {
     $scope.translateService = translateService
     console.log(translateService.getCurrentLanguage());
-    
+
   }
 
 })();

@@ -130,34 +130,38 @@
   <section
     class="fdb-block pt-50 pb-50 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}} text-align-start"
     style="background:#424242;" id="contact-us">
-    <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-lg-4">
-          <h2 class="light-grey-text">{{"Get a call back"|translate}}</h2>
-        </div>
-        <div class="col-12 col-lg-8">
-          <div class="row" ng-Class="{'justify-content-flex-end': translateService.getCurrentLanguage()=='ar'}">
-            <div class="col-12 col-md-4 mb-1">
-              <input class="form-control" type="text" ng-model="callbackModalForm.name" placeholder="{{'Name'|translate}}">
-            </div>
-            <div class="col-12 col-md-3 mb-1">
-              <input class="form-control" type="number" ng-model="callbackModalForm.phoneNumber"
-                placeholder="{{'Phone'|translate}}">
-            </div>
-            <!-- <div class="col-12 col-md-3 mb-2">
+    <form name="callBackForm">
+      <div class="container">
+
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-lg-4">
+            <h2 class="light-grey-text">{{"Get a call back"|translate}}</h2>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="row" ng-Class="{'justify-content-flex-end': translateService.getCurrentLanguage()=='ar'}">
+              <div class="col-12 col-md-4 mb-1">
+                <input class="form-control" type="text" ng-model="callbackForm.name"
+                  placeholder="{{'Name'|translate}}">
+              </div>
+              <div class="col-12 col-md-3 mb-1">
+                <input class="form-control" type="number" ng-model="callbackForm.phoneNumber"
+                  placeholder="{{'Phone'|translate}}">
+              </div>
+              <!-- <div class="col-12 col-md-3 mb-2">
               <select class="form-control" ng-model="callbackForm.product">
                 <option value="Building Management">Building Management</option>
                 <option value="Rental Management">Rental Management</option>
               </select>
             </div> -->
-            <div class="col-12 col-md-2 mb-1">
-              <button type="submit" class="col-12 btn btn-dark raised"
-                ng-click="onCallbackSubmitHandler()">{{"Submit"|translate}}</button>
+              <div class="col-12 col-md-2 mb-1">
+                <button type="submit" class="col-12 btn btn-dark raised"
+                  ng-click="onCallbackSubmitHandler(callBackForm)">{{"Submit"|translate}}</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </section>
 
 </div>
