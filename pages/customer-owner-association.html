@@ -21,8 +21,7 @@
             <p class="mt-4">
               <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
                 href="/choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
-              <a 
-                class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
+              <a class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
                 data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
             </p>
           </div>
@@ -59,7 +58,9 @@
         </div>
       </div>
     </section> -->
-    <section class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}" id="stats">
+    <section
+      class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}"
+      id="stats">
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-5 col-md">
@@ -70,12 +71,12 @@
             <h3><strong>{{"300+ users"|translate}}</strong></h3>
             <p>{{"Use our solutions daily"|translate}}</p>
           </div>
-  
+
           <div class="offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
             <h3><strong>{{"10+ cities"|translate}}</strong></h3>
             <p>{{"Where Aqaraty has been deployed"|translate}}</p>
           </div>
-  
+
           <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
             <h3><strong>{{"100+ service providers"|translate}}</strong></h3>
             <p>{{"Work with us"|translate}}</p>
@@ -85,7 +86,7 @@
     </section>
 
 
-    
+
     <section class="fdb-block" id="explore">
       <div class="container">
         <div class="row align-items-center">
@@ -202,13 +203,13 @@
         </div>
         <div class=" col-md-12 center-content text-center">
           <p class="mt-4 w-50">
-              <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
+            <!-- <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
                   href="choose-product">{{"START A FREE TRIAL"|translate}}</a> -->
-              <a style="color: gray !important"
-                  class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
-                  data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
+            <a style="color: gray !important"
+              class="offset-lg-1 col-12 col-sm-12 col-md-12 col-lg-5 btn btn-white border border-primary m-1"
+              data-toggle="modal" data-target="#exampleModal">{{"BOOK A FREE DEMO"|translate}}</a>
           </p>
-      </div>
+        </div>
         <!-- <div class="offset-md-3 col-md-7 center">
           <p class="mt-4">
             <a class="col-12 col-sm-12 col-md-12 col-lg-5 btn btn-primary  m-1"
@@ -277,7 +278,9 @@
           <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-md-auto">
             <img alt="image" style="height: 150px" src="img/assets/maintenance-icon.png">
             <h3><strong>{{"Request Maintenance"|translate}}</strong></h3>
-            <p>{{"Tenants can raise tickets or complaints, track its progress, give a rating to the job done."|translate}}</p>
+            <p>
+              {{"Tenants can raise tickets or complaints, track its progress, give a rating to the job done."|translate}}
+            </p>
           </div>
           <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-auto pt-4 pt-sm-0">
             <img alt="image" style="height: 150px" src="img/assets/save-money-icon.png">
@@ -314,21 +317,39 @@
                         <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">
                           {{"name is required"|translate}}</p>
                       </div>
-                      <div class="col-12 col-md mt-4 mt-md-0">
+                      <div class="col-12 col-md mt-4 mt-md-0" ng-if="translateService.getCurrentLanguage()=='en'">
                         <label>{{"Country Code:"|translate}} </label>
                         <select name="countryCode" ng-model="callbackModalForm.countryCode"
                           ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr">
                           <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                         </select>
                       </div>
-                      <div class="col-12 col-md mt-4 mt-md-0">
+                      <div class="col-12 col-md mt-4 mt-md-0" ng-if="translateService.getCurrentLanguage()=='en'">
                         <label>{{"Phone Number:"|translate}} </label>
-                        <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
+                        <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control direction-ltr"
                           placeholder="{{'Enter your phone number'|translate}}" ng-model="callbackModalForm.phoneNumber"
                           ng-minlength="4" required>
                         <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched"
                           class="help-block pt-1">
                           {{"phone number is required and must be length 4"|translate}}</p>
+                      </div>
+
+                      <div class="col-12 col-md mt-4 mt-md-0" ng-if="translateService.getCurrentLanguage()=='ar'">
+                        <label>{{"Phone Number:"|translate}} </label>
+                        <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control direction-ltr"
+                          placeholder="{{'Enter your phone number'|translate}}" ng-model="callbackModalForm.phoneNumber"
+                          ng-minlength="4" required>
+                        <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched"
+                          class="help-block pt-1">
+                          {{"phone number is required and must be length 4"|translate}}</p>
+                      </div>
+
+                      <div class="col-12 col-md mt-4 mt-md-0" ng-if="translateService.getCurrentLanguage()=='ar'">
+                        <label>{{"Country Code:"|translate}} </label>
+                        <select name="countryCode" ng-model="callbackModalForm.countryCode"
+                          ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr">
+                          <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
+                        </select>
                       </div>
                     </div>
 

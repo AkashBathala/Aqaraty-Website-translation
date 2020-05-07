@@ -9,7 +9,7 @@
     content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
   <meta name="author" content="">
   <title>Real Estate Customer Experience Management Platform | Property Management Solutions</title>
-  <base href="/">
+  <base href="/Aqaraty-Website-translation/">
 
   <!-- Chrome, Firefox OS and Opera -->
   <meta name="theme-color" content="black">
@@ -1044,19 +1044,38 @@
                                       placeholder="{{'Enter your name'|translate}}" ng-model="callbackModalForm.name" required>
                                     <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched" class="help-block pt-1">{{"name is required"|translate}}</p>
                                   </div>
-                                  <div  class="col-12 col-md mt-4 mt-md-0 ">
+
+                                  <div  class="col-12 col-md mt-4 mt-md-0 " ng-if="selectLanguage=='en'">
                                       <label >{{"Country Code:"|translate}} </label>
                                       <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr" >
                                         <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                                       </select>
                                   </div>
-                                  <div class="col-12 col-md mt-4 mt-md-0">
+
+                                  <div class="col-12 col-md mt-4 mt-md-0"ng-if="selectLanguage=='en'">
                                     <label >{{"Phone Number:"|translate}} </label>
                                   <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                                     placeholder="{{'Enter your phone'|translate}}" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
                                   <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
                                     {{"phone number is required and must be length 4"|translate}}</p>
                                 </div>
+
+
+                              <div class="col-12 col-md mt-4 mt-md-0"ng-if="selectLanguage=='ar'">
+                                <label >{{"Phone Number:"|translate}} </label>
+                              <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control direction-ltr"
+                                placeholder="{{'Enter your phone'|translate}}" ng-model="callbackModalForm.phoneNumber" ng-minlength="4" required>
+                              <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
+                                {{"phone number is required and must be length 4"|translate}}</p>
+                            </div>
+
+                            <div  class="col-12 col-md mt-4 mt-md-0 " ng-if="selectLanguage=='ar'">
+                              <label >{{"Country Code:"|translate}} </label>
+                              <select name="countryCode" ng-model="callbackModalForm.countryCode" ng-init="callbackModalForm.countryCode = '+965'" class="form-control direction-ltr" >
+                                <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
+                              </select>
+                          </div>
+
                                 </div>
                 
                                 <div class="row mt-4">

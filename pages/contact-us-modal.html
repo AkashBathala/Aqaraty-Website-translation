@@ -40,7 +40,7 @@
             <div class="col-8 col-md-8  text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
               <label class=""> {{"Phone Number:"|translate}}</label>
               <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
-                placeholder="{{'Enter your phone  number'|translate}}" ng-model="callbackModalForm.phoneNumber"
+                placeholder="{{'Enter your phone number'|translate}}" ng-model="callbackModalForm.phoneNumber"
                 ng-minlength="4" required>
             </div>
             <p ng-show="callbackForm.phoneNumber.$invalid && callbackForm.phoneNumber.$touched" class="help-block pt-1">
