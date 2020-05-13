@@ -260,30 +260,34 @@
                 </div>
 
                 <div class="row text-center justify-content-center mt-5">
-                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-md-auto">
+                    <div class="col-12 col-md-6 col-sm-6 col-xl-3">
                         <img alt="image" style="height: 150px" src="img/assets/pay-rent-icon.png">
                         <h3><strong>{{"Pay Rent"|translate}}</strong></h3>
                         <p>{{"On the go with a click of a button using Aqaraty Tenant Mobile App."|translate}}</p>
                     </div>
 
-                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-auto pt-4 pt-sm-0">
+                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 ">
                         <img alt="image" style="height: 150px" src="img/assets/allin1-icon.png">
                         <h3><strong>{{"All In 1"|translate}}</strong></h3>
                         <p>{{"Bring all your company functions on 1 platform and integrate operations for a smooth experience."|translate}}
                         </p>
                     </div>
-                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-md-auto">
+                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 ">
                         <img alt="image" style="height: 150px" src="img/assets/maintenance-icon.png">
                         <h3><strong>{{"Request Maintenance"|translate}}</strong></h3>
-                        <p>{{"Tenants can raise tickets or complaints, track its progress, give a rating to the job done."|translate}}
+                        <p class="m-md-auto">
+                            {{"Tenants can now request for repairs and maintenance by raising tickets, track progress and give rating for job done."|translate}}
                         </p>
                     </div>
-                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 m-auto pt-4 pt-sm-0">
+                    <div class="col-12 col-md-6 col-sm-6 col-xl-3 ">
                         <img alt="image" style="height: 150px" src="img/assets/save-money-icon.png">
                         <h3><strong>{{"Save Money"|translate}}</strong></h3>
                         <p>{{"With no setup fee, and pricing plan that scales with your organization, it's easy to get started."|translate}}
                         </p>
                     </div>
+
+
+
                 </div>
             </div>
         </section>
@@ -314,7 +318,8 @@
                                                 <p ng-show="callbackForm.name.$invalid && callbackForm.name.$touched"
                                                     class="help-block pt-1">{{"name is required"|translate}}</p>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start" ng-if="translateService.getCurrentLanguage()=='en'">
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start"
+                                                ng-if="translateService.getCurrentLanguage()=='en'">
                                                 <label>{{"Country Code:"|translate}} </label>
                                                 <select name="countryCode" ng-model="callbackModalForm.countryCode"
                                                     ng-init="callbackModalForm.countryCode = '+965'"
@@ -323,7 +328,8 @@
                                                         {{cityObj.code}}</option>
                                                 </select>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start" ng-if="translateService.getCurrentLanguage()=='en'">
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start"
+                                                ng-if="translateService.getCurrentLanguage()=='en'">
                                                 <label>{{"Phone Number:"|translate}} </label>
                                                 <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
                                                     class="form-control"
@@ -333,9 +339,10 @@
                                                     class="help-block pt-1">
                                                     {{"phone number is required and must be length 4"|translate}}</p>
                                             </div>
-                                            
 
-                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start" ng-if="translateService.getCurrentLanguage()=='ar'">
+
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start"
+                                                ng-if="translateService.getCurrentLanguage()=='ar'">
                                                 <label>{{"Phone Number:"|translate}} </label>
                                                 <input type="number" name="phoneNumber" ng-disabled="progressBarLoading"
                                                     class="form-control direction-ltr"
@@ -345,7 +352,8 @@
                                                     class="help-block pt-1">
                                                     {{"phone number is required and must be length 4"|translate}}</p>
                                             </div>
-                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start" ng-if="translateService.getCurrentLanguage()=='ar'">
+                                            <div class="col-12 col-md mt-4 mt-md-0  text-align-start"
+                                                ng-if="translateService.getCurrentLanguage()=='ar'">
                                                 <label>{{"Country Code:"|translate}} </label>
                                                 <select name="countryCode" ng-model="callbackModalForm.countryCode"
                                                     ng-init="callbackModalForm.countryCode = '+965'"
