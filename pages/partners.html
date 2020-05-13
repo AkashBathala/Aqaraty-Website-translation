@@ -12,11 +12,11 @@
             <img alt="image" class="img-fluid" src="./assets/images/partners.svg">
           </div>
           <p class="lead">
-            {{"At Aqaraty we value our Partners. Please join our partner program to benefit"|translate}}
-            <p class="mt-4">
-              <button class="col-12 col-sm-12 col-md-5 col-lg-5 btn btn-primary raised" data-toggle="modal"
-                data-target="#callbackModal">{{"PARTNER WITH US"|translate}}</button>
-            </p>
+            {{"At Aqaraty we value our Partners. Please join our partner program to benefit."|translate}}
+          <p class="mt-4">
+            <button class="col-12 col-sm-12 col-md-5 col-lg-5 btn btn-primary raised" data-toggle="modal"
+              data-target="#callbackModal">{{"PARTNER WITH US"|translate}}</button>
+          </p>
         </div>
         <div class="d-none d-sm-none d-md-block  col-10 col-sm-6 col-md-6 col-lg-6 m-auto m-md-0">
           <img alt="image" class="img-fluid" src="./assets/images/partners.svg">
@@ -26,31 +26,32 @@
   </section>
 
   <section
-    class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}}">
+    class="fdb-block light-blue-background pt-50 pb-50 text-align-start {{selectLanguage=='ar'?'direction-rtl':'direction-ltr'}}"
+    id="stats">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-5 col-md">
-          <h3><strong>{{"50+ partners"|translate}}</strong></h3>
-          <p>{{"Already part of our program"|translate}}</p>
+          <h3><strong>{{"500 Thousand + sqmt"|translate}}</strong></h3>
+          <p>{{"Managed via Aqaraty solutions"|translate}}</p>
+        </div>
+        <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-sm-0 ">
+          <h3><strong>{{"300+ users"|translate}}</strong></h3>
+          <p>{{"Use our solutions daily"|translate}}</p>
         </div>
 
-        <div class="col-12 col-sm-5 col-md">
-          <h3><strong>{{"$100k+"|translate}}</strong></h3>
-          <p>{{"Payouts already made to partners"|translate}}</p>
+        <div class="offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+          <h3><strong>{{"10+ cities"|translate}}</strong></h3>
+          <p>{{"Where Aqaraty has been deployed"|translate}}</p>
         </div>
 
-        <div class="col-12 col-sm-5 col-md pt-3 pt-sm-0">
-          <h3><strong>{{"8+ countries"|translate}}</strong></h3>
-          <p>{{"Members in all metro cities with extensive coverage"|translate}}</p>
-        </div>
-
-        <div class="col-12 col-sm-5 col-md pt-3 pt-md-0">
-          <h3><strong>{{"100+ customers"|translate}}</strong></h3>
-          <p>{{"Onboarded through our partner network"|translate}}</p>
+        <div class="offset-sm-1 offset-md-1 col-12 col-sm-5 col-md pt-3 pt-md-0">
+          <h3><strong>{{"100+ service providers"|translate}}</strong></h3>
+          <p>{{"Work with us"|translate}}</p>
         </div>
       </div>
     </div>
   </section>
+
 
   <section class="fdb-block">
     <div class="container">
@@ -140,8 +141,7 @@
           <div class="col-12 col-lg-8">
             <div class="row" ng-Class="{'justify-content-flex-end': translateService.getCurrentLanguage()=='ar'}">
               <div class="col-12 col-md-4 mb-1">
-                <input class="form-control" type="text" ng-model="callbackForm.name"
-                  placeholder="{{'Name'|translate}}">
+                <input class="form-control" type="text" ng-model="callbackForm.name" placeholder="{{'Name'|translate}}">
               </div>
               <div class="col-12 col-md-3 mb-1">
                 <input class="form-control" type="number" ng-model="callbackForm.phoneNumber"
