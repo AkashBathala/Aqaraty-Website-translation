@@ -27,21 +27,21 @@
           <form>
             <div class="row">
               <div class="col">
-                <label>{{"Name"|translate}}</label>
+                <label>{{"Name:"|translate}}</label>
                 <input type="text" ng-model="contactUsForm.name" class="form-control"
                   placeholder="{{'Enter Name'|translate}}">
               </div>
             </div>
 
             <div class="row mt-4 direction-ltr">
-              <div class="col {{translateService.getCurrentLanguage()=='ar'?'text-align-end':'text-align-start'}}">
+              <div class="col {{translateService.getCurrentLanguage()=='ar'?' direction-rtl':'direction-ltr'}}">
                 <label>{{"Country Code:"|translate}} </label>
                 <select name="countryCode" ng-model="contactUsForm.countryCode"
                   ng-init="contactUsForm.countryCode = '+965'" class="form-control direction-ltr">
                   <option ng-repeat="cityObj in citiCodes" value="{{cityObj.code}}">{{cityObj.code}}</option>
                 </select>
               </div>
-              <div class="col {{translateService.getCurrentLanguage()=='ar'?'text-align-end':'text-align-start'}}">
+              <div class="col {{translateService.getCurrentLanguage()=='ar'?' direction-rtl':'direction-ltr'}}">
                 <label>{{"Phone Number:"|translate}} </label>
                 <input type="number" name="phoneNumber" ng-disabled="progressBarLoading" class="form-control"
                   placeholder="{{'Enter your phone number'|translate}}" ng-model="contactUsForm.phoneNumber"
