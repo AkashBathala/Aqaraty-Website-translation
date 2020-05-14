@@ -528,3 +528,26 @@ in the LICENSE file at http://material.angularjs.org/HEAD/license.
 .text-align-end {
   text-align: end !important;
 }
+
+#mydiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ajax-loader {
+  position: absolute;
+  /* margin-left: -32px; -1 * image width / 2 */
+  /* margin-top: -32px; -1 * image height / 2 */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 7pc;
+}

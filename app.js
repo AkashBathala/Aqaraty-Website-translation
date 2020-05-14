@@ -188,6 +188,7 @@
     $scope.onCallbackSubmitHandler = function (form) {
       $scope.callbackOverlayActive = true;
       $scope.progressBarLoading = true;
+      $scope.loading = true
       $http({
         method: 'POST',
         url: 'https://rentals.thehousemonk.com/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
@@ -218,7 +219,12 @@
         $scope.callbackForm = {
           countryCode: '+965'
         }
-        form.$setPristine();
+        $scope.loading = false;
+        $scope.callbackModalForm = {
+          countryCode: '+965'
+
+        }
+        form.$setPristine()
         form.$setUntouched();
         $scope.showSuccessToast();
       }, function (response) {
@@ -226,6 +232,8 @@
       }).finally(function () {
         $scope.callbackOverlayActive = false;
         $scope.progressBarLoading = false;
+        $scope.loading = false
+
       });
     };
 
@@ -888,6 +896,7 @@
     $scope.onContactUsSubmitHandler = function () {
       $scope.callbackModalOverlayActive = true;
       $scope.progressBarLoading = true;
+      $scope.loading = true
       $http({
         method: 'POST',
         url: 'https://rentals.thehousemonk.com/shared-resource/webhook/capture-website-contact?organization=5e1ad3b4d0ffee5fb4fc0410',
@@ -900,6 +909,7 @@
         }
       }).then(function (response) {
         $scope.contactUsForm = {};
+        $scope.loading = false
         $scope.showSuccessToast();
       }, function (response) {
         $scope.showErrorToast();

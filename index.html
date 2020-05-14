@@ -9,7 +9,7 @@
     content="Helping new age real estate companies give a great experience to their customers. Coliving, coworking, hostels and student housing, real estate developers and others can avail this one stop solution">
   <meta name="author" content="">
   <title>Real Estate Customer Experience Management Platform | Property Management Solutions</title>
-  <base href="/">
+  <base href="/Aqaraty-Website-translation/">
 
   <!-- Chrome, Firefox OS and Opera -->
   <meta name=" theme-color" content="black">
@@ -325,8 +325,6 @@
   <script type="text/javascript" src="app.js"></script>
   <script src="services/country.service.js"></script>
   <script type="text/ng-template" id="home.html">
-
-    <div ng-controller="HomePageController">
         <div ng-include="'pages/contact-us-modal.html'"></div>
         <section class="fdb-block banner" id="main">
           <div class="container pt-50 pb-50">
@@ -1022,6 +1020,10 @@
               </section>
 
               <section class="fdb-block grey-background">
+                <div ng-controller="HomePageController">
+                  <div id="mydiv" ng-if="loading">
+                    <img src="assets/loading/loading.gif" class="ajax-loader"/>
+                  </div>
                   <div class="container">
                     <div class="row">
                       <div class="col">
