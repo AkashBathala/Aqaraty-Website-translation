@@ -131,6 +131,9 @@
   <section
     class="fdb-block pt-50 pb-50 {{translateService.getCurrentLanguage()=='ar'?'direction-rtl':'direction-ltr'}} text-align-start"
     style="background:#424242;" id="contact-us">
+    <div id="mydiv" ng-if="loading">
+      <img src="assets/loading/loading.gif" class="ajax-loader"/>
+    </div>
     <form name="callBackForm">
       <div class="container">
 

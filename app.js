@@ -228,6 +228,7 @@
         form.$setUntouched();
         $scope.showSuccessToast();
       }, function (response) {
+        $scope.loading = false;
         $scope.showErrorToast();
       }).finally(function () {
         $scope.callbackOverlayActive = false;
@@ -912,6 +913,7 @@
         $scope.loading = false
         $scope.showSuccessToast();
       }, function (response) {
+        $scope.loading = false;
         $scope.showErrorToast();
       }).finally(function () {
         $scope.contactUsForm = {
